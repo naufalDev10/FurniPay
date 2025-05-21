@@ -1,5 +1,5 @@
-import Input from "../../elements/Input";
-import Button from "../../elements/Button"
+import Input from "../../atoms/Input";
+import Button from "../../atoms/Button"
 import { LuSearch } from "react-icons/lu";
 
 const Search = ({ setSearchOpen }) => {

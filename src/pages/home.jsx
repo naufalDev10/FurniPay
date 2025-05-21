@@ -1,8 +1,8 @@
 import { useRef } from "react";
-import Navbar from "../components/layouts/Navbar"
-import Hero from "../components/fragments/Hero"
-import Card from "../components/fragments/Card/Card";
-import Button from "../components/elements/Button";
+import Navbar from "../components/organisms/Navbar/Navbar"
+import Hero from "../components/organisms/Hero"
+import Card from "../components/molekuls/Card/Card";
+import Button from "../components/atoms/Button";
 
 import { LuArrowRight, LuArrowLeft } from "react-icons/lu";
 
@@ -51,18 +51,28 @@ const products = [
     },
 ]
 
+const stats = [
+    {
+        label: "Products Furniture and Interior",
+        value: "250+"
+    },
+    {
+        label: "Furniture Products Sold",
+        value: "500+"
+    },
+    {
+        label: "5 Star Review",
+        value: "480+"
+    },
+]
+
 const Home = () => {
     const scrollRef = useRef(null)
 
     const scroll = (direction) => {
         const container = scrollRef.current
-        const scrollAmount = 343
-
-        if (direction === "left") {
-            container.scrollLeft -= scrollAmount
-        } else {
-            container.scrollLeft += scrollAmount
-        }
+        const scrollAmount = 342
+        direction == "left" ? container.scrollLeft -= scrollAmount : container.scrollLeft += scrollAmount
     }
 
     return (
@@ -71,18 +81,18 @@ const Home = () => {
             <Hero />
             <div className="flex justify-center items-center w-full bg-wood py-5 px-[7%]">
                 <div className="flex justify-between items-center gap-3 w-full max-w-[1440px] md:gap-0">
-                    <div className="">
-                        <h1 className="text-light font-semibold text-2xl">250+</h1>
-                        <p className="text-light text-sm md:text-base">Products Furniture and Interior</p>
-                    </div>
-                    <div className="">
-                        <h1 className="text-light font-semibold text-2xl">500+</h1>
-                        <p className="text-light text-sm md:text-base">Furniture Products Sold</p>
-                    </div>
-                    <div className="">
-                        <h1 className="text-light font-semibold text-2xl">250+</h1>
-                        <p className="text-light text-sm md:text-base">Products Furniture and Interior</p>
-                    </div>
+                    {
+                        stats.map((stat, index) => (
+                            <div key={index} className="">
+                                <h1 className="text-light font-semibold text-2xl">
+                                    {stat.value}
+                                </h1>
+                                <p className="text-light text-sm md:text-base">
+                                    {stat.label}
+                                </p>
+                            </div>
+                        ))
+                    }
                 </div>
             </div>
 

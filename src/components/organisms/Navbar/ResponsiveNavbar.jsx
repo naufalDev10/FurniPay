@@ -1,5 +1,5 @@
+import Button from "../../atoms/Button";
 import { Link } from "react-router-dom";
-import Button from "../elements/Button";
 import { LuX, LuHeart, LuShoppingCart } from "react-icons/lu";
 
 const navLinks = [
@@ -8,8 +8,8 @@ const navLinks = [
         url: "/"
     },
     {
-        name: "Products",
-        url: "/products"
+        name: "Shop",
+        url: "/shop"
     },
     {
         name: "Services",
@@ -24,7 +24,9 @@ const ResponsiveNavbar = ({ navOpen, setNavOpen }) => {
 
     return (
         <>
-            <nav className={`fixed top-0 right-0 ${navOpen ? "transform translate-x-0 transition-transform duration-500" : "transform translate-x-full transition-transform duration-500"} w-80 h-screen bg-light z-70`}>
+            <nav
+                className={`fixed top-0 right-0 ${navOpen ? "transform translate-x-0 transition-transform duration-500" : "transform translate-x-full transition-transform duration-500"} w-80 h-screen bg-light z-70`}
+            >
                 <div className="flex justify-between items-center w-full px-6 py-[7%]">
                     <Link to="" className="text-dark text-2xl font-semibold">
                         Furni<span
@@ -81,12 +83,10 @@ const ResponsiveNavbar = ({ navOpen, setNavOpen }) => {
                     </Button>
                 </div>
             </nav>
-            {
-                navOpen && (
-                    <div onClick={handleCloseNav}
-                        className="absolute inset-0 bg-wood/40 z-60 block md:hidden"></div>
-                )
-            }
+            {navOpen && (
+                <div onClick={handleCloseNav}
+                    className="absolute inset-0 bg-wood/40 z-60 block md:hidden"></div>
+            )}
         </>
     );
 }

@@ -1,4 +1,4 @@
-import Button from "../../elements/Button";
+import Button from "../../atoms/Button";
 import { LuShoppingCart } from "react-icons/lu";
 
 const Card = (props) => {
@@ -35,8 +35,13 @@ const Footer = (props) => {
     const { price } = props
     return (
         <div className="flex justify-between items-center w-full">
-            <span className="font-semibold"><span className="text-wood">Rp. </span>{price}</span>
-            <Button className="flex justify-center items-center text-xl w-8 h-8 cursor-pointer hover:bg-wood hover:rounded-full hover:text-light duration-500">
+            <p className="font-semibold">
+                <span className="text-wood">Rp. </span>{price}
+            </p>
+            <Button
+                className="flex justify-center items-center text-xl w-8 h-8 cursor-pointer 
+                hover:bg-wood hover:rounded-full hover:text-light duration-500"
+            >
                 <LuShoppingCart />
             </Button>
         </div>

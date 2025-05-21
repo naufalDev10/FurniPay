@@ -1,9 +1,8 @@
 import { useState, useEffect } from "react"
-import { Link } from "react-router-dom";
-import { motion } from "framer-motion"
 import ResponsiveNavbar from "./ResponsiveNavbar";
-import Search from "../fragments/Search";
-import Button from "../elements/Button";
+import Search from "../Search";
+import Button from "../../atoms/Button";
+import { Link } from "react-router-dom";
 import { LuMenu, LuSearch, LuShoppingCart, LuUserRound, LuHeart } from "react-icons/lu";
 
 const navLinks = [
@@ -12,12 +11,12 @@ const navLinks = [
         url: "/"
     },
     {
-        name: "Products",
-        url: "/"
+        name: "Shop",
+        url: "/shop"
     },
     {
         name: "Services",
-        url: "/"
+        url: "/services"
     },
 ]
 
@@ -32,7 +31,6 @@ const Navbar = () => {
         };
 
         window.addEventListener('scroll', handleScroll);
-
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
@@ -49,8 +47,13 @@ const Navbar = () => {
         <>
             <header
                 className={`flex justify-center items-center fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white shadow-md' : 'bg-transparent'}`}>
-                <nav className="flex justify-between items-center w-full max-w-[1440px] py-4 px-[3%] md:px-[7%]">
-                    <Link to="" className="text-dark text-xl font-semibold">
+                <nav
+                    className="flex justify-between items-center w-full max-w-[1440px] 
+                    py-4 px-[3%] md:px-[7%]"
+                >
+                    <Link to=""
+                        className="text-dark text-xl font-semibold"
+                    >
                         Furni<span
                             className="text-wood">
                             Pay
@@ -68,34 +71,42 @@ const Navbar = () => {
                         }
                     </ul>
                     <div className="flex justify-center items-center gap-1 md:gap-2">
-                        <Button onClick={handleSearchOpen} className="flex justify-center items-center text-xl w-8 h-8 cursor-pointer hover:bg-wood hover:rounded-full hover:text-light duration-500">
+                        <Button onClick={handleSearchOpen}
+                            className="flex justify-center items-center text-xl w-8 h-8 cursor-pointer hover:bg-wood hover:rounded-full hover:text-light duration-500"
+                        >
                             <LuSearch />
                         </Button>
-                        <Button className="flex justify-center items-center text-xl w-8 h-8 cursor-pointer hover:bg-wood hover:rounded-full hover:text-light duration-500">
+                        <Button
+                            className="flex justify-center items-center text-xl w-8 h-8 cursor-pointer hover:bg-wood hover:rounded-full hover:text-light duration-500"
+                        >
                             <LuShoppingCart />
                         </Button>
-                        <Button className="flex justify-center items-center text-xl w-8 h-8 cursor-pointer hover:bg-wood hover:rounded-full hover:text-light duration-500">
+                        <Button
+                            className="flex justify-center items-center text-xl w-8 h-8 cursor-pointer hover:bg-wood hover:rounded-full hover:text-light duration-500"
+                        >
                             <Link to="">
                                 <LuUserRound />
                             </Link>
                         </Button>
-                        <Button className="hidden md:flex md:justify-center md:items-center md:text-xl md:w-9 md:h-9 cursor-pointer hover:bg-wood hover:rounded-full hover:text-light duration-500">
+                        <Button
+                            className="hidden md:flex md:justify-center md:items-center md:text-xl md:w-9 md:h-9 cursor-pointer hover:bg-wood hover:rounded-full hover:text-light duration-500"
+                        >
                             <Link to="">
                                 <LuHeart />
                             </Link>
                         </Button>
-                        <Button onClick={handleNavOpen} className="flex justify-center items-center text-xl w-8 h-8 cursor-pointer md:hidden hover:bg-wood hover:rounded-full hover:text-light duration-300">
+                        <Button onClick={handleNavOpen}
+                            className="flex justify-center items-center text-xl w-8 h-8 cursor-pointer md:hidden hover:bg-wood hover:rounded-full hover:text-light duration-300"
+                        >
                             <LuMenu />
                         </Button>
                     </div>
                 </nav>
             </header>
             <ResponsiveNavbar navOpen={navOpen} setNavOpen={setNavOpen} />
-            {
-                searchOpen && (
-                    <Search searchOpen={searchOpen} setSearchOpen={setSearchOpen} />
-                )
-            }
+            {searchOpen && (
+                <Search searchOpen={searchOpen} setSearchOpen={setSearchOpen} />
+            )}
         </>
     );
 }
