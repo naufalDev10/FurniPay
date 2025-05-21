@@ -71,17 +71,17 @@ const Home = () => {
             <Hero />
             <div className="flex justify-center items-center w-full bg-wood py-5 px-[7%]">
                 <div className="flex justify-between items-center gap-3 w-full max-w-[1440px] md:gap-0">
-                    <div className="text-center md:text-start">
+                    <div className="">
                         <h1 className="text-light font-semibold text-2xl">250+</h1>
-                        <p className="text-light">Products Furniture and Interior</p>
+                        <p className="text-light text-sm md:text-base">Products Furniture and Interior</p>
                     </div>
-                    <div className="text-center md:text-start">
+                    <div className="">
                         <h1 className="text-light font-semibold text-2xl">500+</h1>
-                        <p className="text-light">Furniture Products Sold</p>
+                        <p className="text-light text-sm md:text-base">Furniture Products Sold</p>
                     </div>
-                    <div className="text-center md:text-start">
+                    <div className="">
                         <h1 className="text-light font-semibold text-2xl">250+</h1>
-                        <p className="text-light">Products Furniture and Interior</p>
+                        <p className="text-light text-sm md:text-base">Products Furniture and Interior</p>
                     </div>
                 </div>
             </div>
