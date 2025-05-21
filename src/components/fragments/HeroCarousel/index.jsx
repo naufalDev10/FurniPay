@@ -39,7 +39,7 @@ const HeroCarousel = () => {
                         <img
                             src={`/carousel/${slide.image}`}
                             alt="image"
-                            className="w-full object-cover md:w-full md:h-full"
+                            className="w-full object-cover h-[65dvh] md:w-full md:h-full"
                         />
                         <div className="w-full px-6 py-6 md:absolute md:top-[30%] md:left-20 md:max-w-xl md:py-0 md:px-0">
                             <h1 className="font-semibold text-2xl text-wood md:text-6xl  md:drop-shadow-xl">
