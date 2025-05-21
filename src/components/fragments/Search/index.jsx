@@ -9,7 +9,7 @@ const Search = ({ setSearchOpen }) => {
 
     return (
         <div className="fixed inset-0 flex justify-center items-center bg-wood/40 z-60">
-            <div className="w-3/4 bg-light py-5 px-[3%] rounded-md md:w-1/2 transform transition-all duration-300 ease-out scale-95 animate-fade-in-scale">
+            <div className="w-[90%] bg-light py-5 px-[3%] rounded-md md:w-1/2 transform transition-all duration-300 ease-out scale-95 animate-fade-in-scale">
                 <div className="flex justify-between w-full">
                     <form className="flex w-3/4">
                         <Input type="text" name="search" id="search"

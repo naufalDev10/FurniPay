@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion"
 import ResponsiveNavbar from "./ResponsiveNavbar";
 import Search from "../fragments/Search";
 import Button from "../elements/Button";
@@ -27,12 +28,7 @@ const Navbar = () => {
 
     useEffect(() => {
         const handleScroll = () => {
-            const offset = window.scrollY;
-            if (offset > 50) {
-                setScrolled(true);
-            } else {
-                setScrolled(false);
-            }
+            setScrolled(window.scrollY > 100)
         };
 
         window.addEventListener('scroll', handleScroll);
@@ -51,7 +47,8 @@ const Navbar = () => {
     }
     return (
         <>
-            <header className={`flex justify-center items-center fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white shadow-md' : 'bg-transparent'}`}>
+            <header
+                className={`flex justify-center items-center fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white shadow-md' : 'bg-transparent'}`}>
                 <nav className="flex justify-between items-center w-full max-w-[1440px] py-4 px-[3%] md:px-[7%]">
                     <Link to="" className="text-dark text-xl font-semibold">
                         Furni<span
